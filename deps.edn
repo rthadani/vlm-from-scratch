@@ -1,0 +1,20 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        clj-python/libpython-clj {:mvn/version "2.026"}
+        org.clojure/data.json {:mvn/version "2.5.0"}
+        org.clojure/tools.cli {:mvn/version "1.1.230"}
+        io.github.rthadani/clj-pytorch {:mvn/version "0.4.0"} #_{:git/url "https://github.com/rthadani/clj-pytorch"
+                                                                 :git/sha "9e97f8db38f63a4854a79ddfe7d5f0293b1def33"}}
+
+ :aliases
+ {:run-inference {:main-opts ["-m" "vlm.inference"]}
+  :run-m {:main-opts ["-m" "vlm.vlm-from-scratch"]}
+  :run-x {:ns-default vlm.vlm-from-scratch
+          :exec-fn greet
+          :exec-args {:name "Clojure"}}
+  :build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.4"}}
+          :ns-default build}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
+                      io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}}}}
