@@ -1,10 +1,6 @@
 # vlm-from-scratch
 
-FIXME: my new application.
-
-## Installation
-
-Download from <https://github.com/vlm/vlm-from-scratch>
+Translation of <https://github.com/hkproj/pytorch-paligemma>
 
 ## Usage
 
